@@ -40,7 +40,7 @@ const tournamentSchema = new mongoose.Schema(
     },
     rules: {
       type: [String],
-      default: [],
+      default: [], 
     },
     status: {
       type: String,

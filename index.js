@@ -19,8 +19,10 @@ connectDB();
 app.use(express.json());
 
 app.get("/", (req, res) => {
+  console.log("Root route accessed at:", new Date().toLocaleString());
   res.send("MongoDB connection successful ✅");
 });
+
 
 app.post("/register", registerUser);
 app.post("/login", loginUser);
