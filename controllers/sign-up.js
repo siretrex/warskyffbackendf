@@ -9,11 +9,17 @@ const registerUser = async (req, res) => {
       return res.status(400).json({ message: "All fields are required." });
     }
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
+    const existingEmail = await User.findOne({ email });
+    const existingPhone = await User.findOne({ phone_no });
+    if (existingEmail) {
       return res
         .status(400)
         .json({ message: "User already exists with this email." });
+    }
+    if (existingPhone) {
+      return res
+        .status(400)
+        .json({ message: "User already exists with this Phone Number." });
     }
 
     // ✅ Hash password
