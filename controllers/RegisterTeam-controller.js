@@ -32,6 +32,7 @@ const registerTeam = async (req, res) => {
       leader_email: leader_email,
       contact_number: contactNumber,
       userid:userId,
+      utr_number:utrNumber,
       tournament_id: tournamentId, // or you can populate tournament name here
       members: members.map((m) => ({
         ign: m.name,

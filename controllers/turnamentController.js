@@ -15,6 +15,7 @@ const addTournament = async (req, res) => {
       rules,
       status,
     } = req.body;
+    console.log(req.body)
 
     // Check if tournament with the same name exists
     const existing = await Tournament.findOne({ name });
