@@ -41,19 +41,19 @@ app.get("/teams", getAllTeams);
 
 
 
-const { deleteUser} = require('./controllers/Users-controller.js')
-app.delete("/deleteuser/:id", deleteUser);
+// const { deleteUser} = require('./controllers/Users-controller.js')
+// app.delete("/deleteuser/:id", deleteUser);
 
-const Team = require('./models/Team-model.js')
-app.put("/updateteam/:id", async (req, res) => {
-  try {
-    const team = await Team.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    res.status(200).json(team);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-    console.log(err)
-  }
-});
+// const Team = require('./models/Team-model.js')
+// app.put("/updateteam/:id", async (req, res) => {
+//   try {
+//     const team = await Team.findByIdAndUpdate(req.params.id, req.body, { new: true });
+//     res.status(200).json(team);
+//   } catch (err) {
+//     res.status(500).json({ error: err.message });
+//     console.log(err)
+//   }
+// });
 
 
 
